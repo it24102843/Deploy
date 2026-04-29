@@ -22,12 +22,18 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Description is required"],
       trim: true,
     },
+     discountPercentage: {
+      type: Number,
+      default: 0,
+      required: [true, "Discount percentage is required"],
+    },
     imageUrl: {
       type: String,
       default: "",
       trim: true,
     },
   },
+ 
   { timestamps: true }
 );
 

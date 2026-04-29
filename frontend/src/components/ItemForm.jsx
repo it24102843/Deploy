@@ -8,6 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
+      discountPercentage: "",
     }
   );
 
@@ -21,6 +22,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
+      discountPercentage: Number(formData.discountPercentage),
     });
   };
 
@@ -54,6 +56,15 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
 
       <label>Image URL</label>
       <input name="imageUrl" value={formData.imageUrl} onChange={handleChange} />
+
+      <label>Discount Percentage</label>
+      <input
+        type="number"
+        name="discountPercentage"
+        value={formData.discountPercentage}
+        onChange={handleChange}
+        required
+      />
 
       <button className="btn primary" type="submit">{submitText}</button>
     </form>
