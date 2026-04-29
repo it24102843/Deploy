@@ -1,3 +1,7 @@
+import dns from "dns";
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+dns.setDefaultResultOrder('ipv4first');
+
 import express from "express"; // Import Express framework for HTTP server routing
 import dotenv from "dotenv"; // Import dotenv to load environment variables from .env file
 import cors from "cors"; // Import CORS middleware to enable cross-origin requests
